@@ -397,15 +397,5 @@ $(function() {
         }
         return !1;
     });
-	// contact modal
-    $(".contact-modal-launcher, .contact-modal-closer").on("click", function() {
-        if ($(".contact-modal").hasClass("open")) {
-            $(".contact-modal").removeClass("open");
-            $(".contact-modal").addClass("close");
-        } else {
-            $(".contact-modal").removeClass("close");
-            $(".contact-modal").addClass("open");
-        }
-    });
 	
 });
