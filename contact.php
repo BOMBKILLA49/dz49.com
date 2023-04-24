@@ -1,5 +1,5 @@
 <?php
-    $myemail = 'ask@dz49.com';
+    $myemail = 'gps49@outlook.com';
 
     // Check if form was submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
