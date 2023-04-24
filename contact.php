@@ -48,5 +48,6 @@
     <?php elseif (isset($success_message)): ?>
         <div class="success"><?php echo $success_message; ?></div>
     <?php endif; ?>
+     
 </body>
 </html>
