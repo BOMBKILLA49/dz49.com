@@ -48,16 +48,5 @@
     <?php elseif (isset($success_message)): ?>
         <div class="success"><?php echo $success_message; ?></div>
     <?php endif; ?>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <label for="name">Name:</label>
-        <input type="text" name="name" required><br>
-        <label for="email">Email:</label>
-        <input type="email" name="email" required><br>
-        <label for="subject">Subject:</label>
-        <input type="text" name="subject" required><br>
-        <label for="message">Message:</label>
-        <textarea name="message" required></textarea><br>
-        <input type="submit" value="Send">
-    </form>
 </body>
 </html>
