@@ -1285,8 +1285,56 @@
                                                         <div class="inner-divider-large"></div><!-- divider end -->
                                                         <!-- page TXT start -->
                                                         <p>
-                                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
-                                                            <a class="link-underline" href="#">since the 1500s</a>.
+                                                            </p>
+
+<div id="app">
+<input v-model="email" type="email"> 
+<button @click="doSubscribe" :disabled="working">Subscribe</button>
+<p style="font-weight: bold">
+{% raw %}
+{{ status }}
+{% endraw %}
+</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+const SUBSCRIBE_API = '/.netlify/functions/newsletter-signup?email=';
+
+const app = new Vue({
+	el:'#app',
+	data: {
+		email:'',
+    	working:false,
+		status:''
+	},
+	methods: {
+		async doSubscribe() {
+			if(this.email === '') return;
+			this.working = true;
+			console.log('do add for'+this.email);
+			this.status = 'Attemping to subscribe you...';
+			
+			fetch(SUBSCRIBE_API + this.email)
+			.then(res => {
+				return res.json()
+			})
+			.then(res => {
+				console.log('status',res.status);
+				if(res.status === 'subscribed') {
+					this.status = 'You have been subscribed!';
+				} else if(res.status === 400) {
+					this.status = `There was an error: ${res.detail}`;
+				}
+				this.working = false;
+			})
+			.catch(e => {
+				console.log('error result', e);
+			});
+		}
+	}
+})
+</script>
                                                         </p><!-- page TXT end -->
                                                     </div><!-- post txt end -->
                                                     <!-- divider start -->
