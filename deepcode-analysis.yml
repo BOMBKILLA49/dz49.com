@@ -27,3 +27,6 @@ jobs:
       uses: github/codeql-action/upload-sarif@v1
       with:
         sarif_file: output.sarif
+        
+- name: deepcode-code-scanning-analysis
+  uses: georgismitev/deepcode-code-scanning-analysis@v0.1-pre-release
