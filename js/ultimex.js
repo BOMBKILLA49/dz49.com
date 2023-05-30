@@ -61,7 +61,7 @@ $(function() {
             if (hash == "#news") {
                 openPopup(hash);
             }
-            if (hash == "#contact") {
+            if (hash == "#") {
                 openPopup(hash);
             }
         } else {
