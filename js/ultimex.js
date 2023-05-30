@@ -81,7 +81,7 @@ $(function() {
             if (hash == "#news") {
                 openAndClose(hash);
             }
-            if (hash == "#contact") {
+            if (hash == "#") {
                 openAndClose(hash);
             }
         }
