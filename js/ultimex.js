@@ -19,7 +19,6 @@
     4.2. owl services carousel
     4.3. owl works carousel
 	4.4. owl news carousel
-	4.5. owl contact carousel
   5. magnificPopup
     5.1. magnificPopup single
 	5.2. magnificPopup gallery
@@ -27,8 +26,7 @@
   7. facts counter
   8. chart skills
   9. clone function
-    9.1. vertical lines
-  10. contact form
+    9.1. vertical link
 */
 
 
@@ -222,35 +220,6 @@ $(function() {
             }
         }
     });
-    // 4.5. owl contact carousel
-    $("#contact-carousel").owlCarousel({
-        loop: true,
-        center: false,
-        items: 1,
-        margin: 20,
-        autoplay: false,
-        autoplaySpeed: 1000,
-        autoplayTimeout: 4000,
-		autoHeight: true,
-        smartSpeed: 450,
-        nav: true,
-        navText: ["<i class='owl-custom ion-chevron-left'></i>", "<i class='owl-custom ion-chevron-right'></i>"],
-        navContainer: '.owl-nav-custom-contact',
-        autoplayHoverPause: false,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
-                items: 1
-            }
-        }
-    });
-	
     // 5. magnificPopup
     // 5.1. magnificPopup single
     $(".popup-photo-single").magnificPopup({
