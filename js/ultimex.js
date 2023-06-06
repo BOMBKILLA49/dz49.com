@@ -373,7 +373,7 @@ $(function() {
     $("<div class='vertical-effect'></div>").duplicate(3).appendTo(".vertical-lines-wrapper");
 	
     // 10. contact form
-    $("form#form").on("submit", function() {
+    
         $("form#form .error").remove();
         var s = !1;
         if ($(".requiredField").each(function() {
