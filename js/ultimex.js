@@ -81,7 +81,7 @@ $(function() {
             if (hash == "#news") {
                 openAndClose(hash);
             }
-            if (hash == "#contact") {
+            if (hash == "https://dz49.co/contact-us") {
                 openAndClose(hash);
             }
         }
