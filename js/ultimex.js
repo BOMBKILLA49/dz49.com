@@ -223,7 +223,7 @@ $(function() {
         }
     });
     // 4.5. owl contact carousel
-    $("#contact-carousel").owlCarousel({
+    $("https://dz49.co/contact-us").owlCarousel({
         loop: true,
         center: false,
         items: 1,
