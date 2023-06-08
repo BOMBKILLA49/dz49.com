@@ -49,7 +49,7 @@ $(function() {
 });
 
 function animateSlider(hash) {
-    if (hash == "#contact") {
+    if (hash == "https://dz49.co/contact-us") {
         // Open a new HTML link
         window.location.href = "https://dz49.co/contact-us";
     } else {
@@ -66,7 +66,7 @@ function animateSlider(hash) {
             if (hash == "#news") {
                 openPopup(hash);
             }
-            if (hash == "#contact") {
+            if (hash == "https://dz49.co/contact-us") {
                 openPopup(hash);
             }
         } else {
@@ -86,7 +86,7 @@ function animateSlider(hash) {
             if (hash == "#news") {
                 openAndClose(hash);
             }
-            if (hash == "#contact") {
+            if (hash == "https://dz49.co/contact-us") {
                 openAndClose(hash);
             }
         }
