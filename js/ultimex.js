@@ -61,7 +61,7 @@ $(function() {
             if (hash == "#news") {
                 openPopup(hash);
             }
-            if (hash == "#contact") {
+            if (hash == "https://dz49.co/contact-us") {
                 openPopup(hash);
             }
         } else {
