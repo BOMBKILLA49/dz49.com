@@ -44,48 +44,49 @@ $(function() {
 	
     // 2. lifting control
     $(".navbar-collapse ul li a").on("click", function(e) {
-        e.preventDefault();
-        animateSlider(this.hash);
-    });
-    function animateSlider(hash) {
-        if (!$("#containerOT div.open").length) {
-            if (hash == "#about") {
-                openPopup(hash);
-            }
-            if (hash == "#services") {
-                openPopup(hash);
-            }
-            if (hash == "#works") {
-                openPopup(hash);
-            }
-            if (hash == "#news") {
-                openPopup(hash);
-            }
-            if (hash == "#contact") {
-                openPopup(hash);
-            }
-        } else {
-            if (hash == "#home") {
-                openAndClose(hash);
-                $("#overlay").fadeOut(600);
-            }
-            if (hash == "#about") {
-                openAndClose(hash);
-            }
-            if (hash == "#services") {
-                openAndClose(hash);
-            }
-            if (hash == "#works") {
-                openAndClose(hash);
-            }
-            if (hash == "#news") {
-                openAndClose(hash);
-            }
-            if (hash == "#contact") {
-                openAndClose(hash);
-            }
+    e.preventDefault();
+    animateSlider(this.hash);
+});
+
+function animateSlider(hash) {
+    if (!$("#containerOT div.open").length) {
+        if (hash == "#about") {
+            openPopup(hash);
+        }
+        if (hash == "#services") {
+            openPopup(hash);
+        }
+        if (hash == "#works") {
+            openPopup(hash);
+        }
+        if (hash == "#news") {
+            openPopup(hash);
+        }
+        if (hash == "#contact") {  // Updated hash value to "#contact"
+            openPopup(hash);
+        }
+    } else {
+        if (hash == "#home") {
+            openAndClose(hash);
+            $("#overlay").fadeOut(600);
+        }
+        if (hash == "#about") {
+            openAndClose(hash);
+        }
+        if (hash == "#services") {
+            openAndClose(hash);
+        }
+        if (hash == "#works") {
+            openAndClose(hash);
+        }
+        if (hash == "#news") {
+            openAndClose(hash);
+        }
+        if (hash == "#contact") {  // Updated hash value to "#contact"
+            openAndClose(hash);
         }
     }
+}
     function openPopup(hash) {
         $(hash + "-lifting").slideToggle().addClass("open");
         $("#overlay").fadeIn(600);
