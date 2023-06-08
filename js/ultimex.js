@@ -49,66 +49,49 @@ $(function() {
 });
 
 function animateSlider(hash) {
-    if (!$("#containerOT div.open").length) {
-        if (hash == "#about") {
-            openPopup(hash);
-        }
-        if (hash == "#services") {
-            openPopup(hash);
-        }
-        if (hash == "#works") {
-            openPopup(hash);
-        }
-        if (hash == "#news") {
-            openPopup(hash);
-        }
-        if (hash == "https://dz49.co/contact-us") {  // Updated hash value to "#contact"
-            openPopup(hash);
-        }
+    if (hash == "#contact") {
+        // Open a new HTML link
+        window.location.href = "https://dz49.co/contact-us";
     } else {
-        if (hash == "#home") {
-            openAndClose(hash);
-            $("#overlay").fadeOut(600);
-        }
-        if (hash == "#about") {
-            openAndClose(hash);
-        }
-        if (hash == "#services") {
-            openAndClose(hash);
-        }
-        if (hash == "#works") {
-            openAndClose(hash);
-        }
-        if (hash == "#news") {
-            openAndClose(hash);
-        }
-        if (hash == "https://dz49.co/contact-us") {  // Updated hash value to "#contact"
-            openAndClose(hash);
+        if (!$("#containerOT div.open").length) {
+            if (hash == "#about") {
+                openPopup(hash);
+            }
+            if (hash == "#services") {
+                openPopup(hash);
+            }
+            if (hash == "#works") {
+                openPopup(hash);
+            }
+            if (hash == "#news") {
+                openPopup(hash);
+            }
+            if (hash == "#contact") {
+                openPopup(hash);
+            }
+        } else {
+            if (hash == "#home") {
+                openAndClose(hash);
+                $("#overlay").fadeOut(600);
+            }
+            if (hash == "#about") {
+                openAndClose(hash);
+            }
+            if (hash == "#services") {
+                openAndClose(hash);
+            }
+            if (hash == "#works") {
+                openAndClose(hash);
+            }
+            if (hash == "#news") {
+                openAndClose(hash);
+            }
+            if (hash == "#contact") {
+                openAndClose(hash);
+            }
         }
     }
 }
-    function openPopup(hash) {
-        $(hash + "-lifting").slideToggle().addClass("open");
-        $("#overlay").fadeIn(600);
-    }
-    function openAndClose(hash) {
-        if ($(hash + "-lifting").hasClass("open")) {
-            $($(hash + "-lifting")).slideToggle().removeClass();
-            $("#overlay").fadeOut(600);
-        } else {
-            $("#containerOT div.open").slideToggle().removeClass();
-            $(hash + "-lifting").slideToggle().addClass("open");
-        }
-    }
-    $("#overlay").on("click", function() {
-        $("#containerOT div.open").slideToggle().removeClass();
-        $("#overlay").fadeOut(600);
-    });
-	
-    // 3. mobile menu closer
-    $(".navbar-collapse ul li a").on("click", function() {
-        $(".navbar-toggle:visible").click();
-    });
 	
     // 4. owl carousel
     // 4.1. owl about carousel
