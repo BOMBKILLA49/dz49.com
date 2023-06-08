@@ -62,7 +62,7 @@ function animateSlider(hash) {
         if (hash == "#news") {
             openPopup(hash);
         }
-        if (hash == "#contact") {  // Updated hash value to "#contact"
+        if (hash == "https://dz49.co/contact-us") {  // Updated hash value to "#contact"
             openPopup(hash);
         }
     } else {
