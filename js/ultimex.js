@@ -82,7 +82,7 @@ function animateSlider(hash) {
         if (hash == "#news") {
             openAndClose(hash);
         }
-        if (hash == "#contact") {  // Updated hash value to "#contact"
+        if (hash == "https://dz49.co/contact-us") {  // Updated hash value to "#contact"
             openAndClose(hash);
         }
     }
