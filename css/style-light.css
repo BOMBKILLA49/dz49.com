@@ -629,7 +629,7 @@ z-index: 2;
 #services-lifting,
 #works-lifting,
 #news-lifting,
-<a class="link-underline-menu" href="https://dz49.co/contact-us">Contact</a> {
+<a href="https://dz49.co/contact-us">Contact</a> {
 position: absolute;
 display: none;
 width: 100%;
@@ -650,7 +650,7 @@ z-index: 3;
   #services-lifting,
   #works-lifting,
   #news-lifting,
-  <a class="link-underline-menu" href="https://dz49.co/contact-us">Contact</a> {
+  <a href="https://dz49.co/contact-us">Contact</a> {
     height: 100%;
 	overflow-x: hidden;
     overflow-y: auto;
