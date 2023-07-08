@@ -280,7 +280,7 @@ $(function() {
         preloadImages: false,
         loop: true,
 		resistance: true,
-        resistanceRatio: 0.85,
+        resistanceRatio: 1.1,
 		parallax: false,
 		effect: "slide",
 		mousewheel: {
