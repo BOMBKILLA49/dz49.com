@@ -300,7 +300,7 @@ $(function() {
             prevEl: ".slide-prev"
         },
         autoplay: {
-            delay: 2400,
+            delay: 5000,
             disableOnInteraction: false
         },
         breakpoints: {
