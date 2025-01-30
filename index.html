@@ -122,8 +122,27 @@
                                                     <div class="inner-divider"></div><!-- divider end -->
                                                     <!-- page TXT start -->
                                                     <p>
-                                                        Test the waters, unlock your online potential with DZ49's web plans, great for influencers, portfolios, digital resumes, E-commerce online software & more. <a class="link-underline" href="https://dz49.co/3-build-a-website">CLICK HERE TO START NOW</a>
-                                                    </p><!-- page TXT end -->
+                                                    <div id="paypal-button-container-P-93W19093VB403145GM6N6HZY"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=ATSlZ_s5NDMSbPeJ2GdRSwt_HD7iQ-no1GJCiDPHrvNVVXGBl6gGtARA-hgZSJYngsYH-7oj8hghcutb&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'rect',
+          color: 'black',
+          layout: 'vertical',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-93W19093VB403145GM6N6HZY'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-93W19093VB403145GM6N6HZY'); // Renders the PayPal button
+</script>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </div>
