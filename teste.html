@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check Out Date and Time Form</title>
+    <title>Location and Time Form</title>
     <!-- Bootstrap CSS for styling -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Flatpickr CSS for date/time picker -->
+    <!-- Flatpickr CSS for time picker -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <style>
         body {
@@ -45,26 +45,39 @@
             outline: 0;
             box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
         }
+        /* Required field indicator */
+        .required::after {
+            content: " *";
+            color: red;
+        }
     </style>
 </head>
 <body>
     <div class="form-container">
         <h2 class="text-center mb-4">Reservation Form</h2>
         <form>
-            <!-- Original Check In Field (for context) -->
+            <!-- Check In Date Field (for context) -->
             <div class="form-group">
                 <label for="checkin_date">Check In Date</label>
                 <input type="text" id="checkin_date" name="checkin_date" class="form-control" placeholder="Select date">
             </div>
 
-            <!-- Replaced Check Out with Date and Time Fields -->
+            <!-- Replaced Check Out Date with Required Location Field -->
             <div class="form-group">
-                <label for="checkout_date">Check Out Date</label>
-                <input type="text" id="checkout_date" name="checkout_date" class="form-control" placeholder="Select date">
+                <label for="location" class="required">Location</label>
+                <input type="text" id="location" name="location" class="form-control" placeholder="Enter location" required>
             </div>
+
+            <!-- Check Out Time Field -->
             <div class="form-group">
                 <label for="checkout_time">Check Out Time</label>
                 <input type="text" id="checkout_time" name="checkout_time" class="form-control" placeholder="Select time">
+            </div>
+
+            <!-- Added Phone Number Field -->
+            <div class="form-group">
+                <label for="phone_number">Phone Number</label>
+                <input type="tel" id="phone_number" name="phone_number" class="form-control" placeholder="Enter phone number" pattern="[0-9]{10}" title="Please enter a 10-digit phone number">
             </div>
 
             <!-- Submit Button -->
@@ -74,45 +87,7 @@
         </form>
     </div>
 
-    <!-- jQuery (used by many ThemeForest templates) -->
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Flatpickr JS -->
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
-        $(document).ready(function() {
-            // Initialize Flatpickr for Check In Date
-            $("#checkin_date").flatpickr({
-                dateFormat: "Y-m-d", // e.g., 2025-02-22
-                minDate: "today" // Prevents past dates
-            });
-
-            // Initialize Flatpickr for Check Out Date
-            $("#checkout_date").flatpickr({
-                dateFormat: "Y-m-d", // e.g., 2025-02-22
-                minDate: "today" // Prevents past dates
-            });
-
-            // Initialize Flatpickr for Check Out Time
-            $("#checkout_time").flatpickr({
-                enableTime: true,
-                noCalendar: true,
-                dateFormat: "H:i", // 24-hour format, e.g., 14:30
-                time_24hr: true
-            });
-
-            // Optional: Log form data on submit for testing
-            $("form").on("submit", function(e) {
-                e.preventDefault(); // Prevent actual submission
-                console.log({
-                    checkin_date: $("#checkin_date").val(),
-                    checkout_date: $("#checkout_date").val(),
-                    checkout_time: $("#checkout_time").val()
-                });
-                alert("Form submitted! Check console for values.");
-            });
-        });
-    </script>
-</body>
-</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></
