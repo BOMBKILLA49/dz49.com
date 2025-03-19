@@ -79,7 +79,8 @@
 </head>
 <body>
     <div class="form-container">
-        <h2 class="text-center mb-4">Recurring Payment Form</h2>
+        <h2 class="text-center mb-4">Recurring BTC Savings</h2>
+        <p class="text-center mb-4">Join our recurring BTC savings program and effortlessly stack Bitcoin straight to your personal BTC address! Simply make your payments in USD, and every 60 days after each payment, we’ll convert your funds to BTC and send them directly to your wallet—secure, simple, and built for the long haul.</p>
         <form method="post" action="https://forms.un-static.com/forms/20498b1a2650cc2e25d22b39d309bac55c735de6">
             <!-- Name Field -->
             <div class="form-group">
@@ -97,6 +98,12 @@
             <div class="form-group">
                 <label for="btc_address" class="required">BTC Address</label>
                 <input type="text" id="btc_address" name="btc_address" class="form-control" placeholder="Enter your BTC address" required>
+            </div>
+
+            <!-- Contribution Amount Field -->
+            <div class="form-group">
+                <label for="amount" class="required">Contribution Amount (USD)</label>
+                <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter amount in USD" min="0.01" step="0.01" required>
             </div>
 
             <!-- Recurrence Frequency Dropdown -->
