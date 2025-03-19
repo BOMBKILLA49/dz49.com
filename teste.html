@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recurring Payment Form</title>
-    <!-- Bootstrap CSS for styling -->
+    <title>Recurring BTC Savings</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -81,32 +80,45 @@
     <div class="form-container">
         <h2 class="text-center mb-4">Recurring BTC Savings</h2>
         <p class="text-center mb-4">Join our recurring BTC savings program and effortlessly stack Bitcoin straight to your personal BTC address! Simply make your payments in USD, and every 60 days after each payment, we’ll convert your funds to BTC and send them directly to your wallet—secure, simple, and built for the long haul.</p>
-        <form method="post" action="https://forms.un-static.com/forms/20498b1a2650cc2e25d22b39d309bac55c735de6">
-            <!-- Name Field -->
+        <form method="post" action="https://forms.un-static.com/forms/20498b1a2650cc2e25d22b39d309bac55c735de6" id="btc-form">
             <div class="form-group">
                 <label for="name" class="required">Name</label>
                 <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
             </div>
-
-            <!-- Email Field -->
             <div class="form-group">
                 <label for="email" class="required">Email</label>
                 <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
             </div>
-
-            <!-- BTC Address Field -->
+            <!-- Crypto Selection Dropdown -->
             <div class="form-group">
-                <label for="btc_address" class="required">BTC Address</label>
-                <input type="text" id="btc_address" name="btc_address" class="form-control" placeholder="Enter your BTC address" required>
+                <label for="crypto_type" class="required">Cryptocurrency</label>
+                <select id="crypto_type" name="crypto_type" class="form-control" required>
+                    <option value="BTC">BTC</option>
+                    <option value="ETH">ETH</option>
+                    <option value="XRP">XRP</option>
+                    <option value="SOL">SOL</option>
+                    <option value="DOGE">DOGE</option>
+                    <option value="TRX">TRX</option>
+                    <option value="LINK">LINK</option>
+                    <option value="XLM">XLM</option>
+                    <option value="AVAX">AVAX</option>
+                    <option value="SHIB">SHIB</option>
+                    <option value="QNT">QNT</option>
+                    <option value="LTC">LTC</option>
+                    <option value="PEPE">PEPE</option>
+                    <option value="TRUMP">TRUMP</option>
+                    <option value="BONK">BONK</option>
+                </select>
             </div>
-
-            <!-- Contribution Amount Field -->
+            <!-- Crypto Address Field -->
+            <div class="form-group">
+                <label for="crypto_address" class="required" id="crypto_address_label">Enter BTC Address</label>
+                <input type="text" id="crypto_address" name="crypto_address" class="form-control" placeholder="Enter BTC address" required>
+            </div>
             <div class="form-group">
                 <label for="amount" class="required">Contribution Amount (USD)</label>
                 <input type="number" id="amount" name="amount" class="form-control" placeholder="Enter amount in USD" min="0.01" step="0.01" required>
             </div>
-
-            <!-- Recurrence Frequency Dropdown -->
             <div class="form-group">
                 <label for="recurrence">Recurrence Frequency</label>
                 <select id="recurrence" name="recurrence" class="form-control">
@@ -115,8 +127,6 @@
                     <option value="monthly">Every Month</option>
                 </select>
             </div>
-
-            <!-- Day of Week Dropdown -->
             <div class="form-group">
                 <label for="day_of_week">Day of Recurrence</label>
                 <select id="day_of_week" name="day_of_week" class="form-control">
@@ -129,21 +139,36 @@
                     <option value="sunday">Sunday</option>
                 </select>
             </div>
-
-            <!-- Buttons -->
             <div class="button-group mt-4">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
     </div>
 
-    <!-- jQuery (kept for potential future use) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function() {
-            // No dynamic logic needed yet; form submits directly
+            // Update crypto address label and placeholder based on selection
+            $("#crypto_type").on("change", function() {
+                const selectedCrypto = $(this).val();
+                $("#crypto_address_label").text(`Enter ${selectedCrypto} Address`);
+                $("#crypto_address").attr("placeholder", `Enter ${selectedCrypto} address`);
+            });
+
+            // Log submission for debugging
+            $("#btc-form").on("submit", function(e) {
+                console.log("Submitting form to: " + this.action);
+                console.log({
+                    name: $("#name").val(),
+                    email: $("#email").val(),
+                    crypto_type: $("#crypto_type").val(),
+                    crypto_address: $("#crypto_address").val(),
+                    amount: $("#amount").val(),
+                    recurrence: $("#recurrence").val(),
+                    day_of_week: $("#day_of_week").val()
+                });
+            });
         });
     </script>
 </body>
